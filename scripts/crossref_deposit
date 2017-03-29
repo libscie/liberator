@@ -1,0 +1,32 @@
+#!/bin/bash         
+
+# Return error if arg is missing
+if [ ! "$1" ]; then
+  echo "Please add output directory argument"
+  exit 1
+fi
+if [ ! "$2" ]; then
+  echo "Please add date argument"
+  exit 1
+fi
+
+DIRECTORY="$1"
+DATE="$2"
+
+END=$(GET "http://api.crossref.org/works?facet=license:*&filter=from-pub-date:$DATE,until-pub-date:$DATE&rows=0" | grep -oP 'total-results":\d*' | grep -oP '\d*')
+
+if [ $END != 0 ]; then
+	if [ ! -d "$DIRECTORY" ]; then
+	 # Control will enter here if $DIRECTORY doesn't exist.
+	 mkdir $DIRECTORY
+	fi
+	# Create dir for date
+	mkdir "$DIRECTORY/$DATE"
+
+	for ((i=0;i<=END;((i+=1000)))); do
+    GET "http://api.crossref.org/works?facet=license:*&filter=from-deposit-date:$DATE&rows=1000&offset=$i" >> "$DIRECTORY/$DATE/$i"
+    echo "Saved hits for year $DATE, $i out of $END."
+	done
+else
+	echo "Skipping year $DATE because there are no hits."
+fi

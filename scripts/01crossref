@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./bin/crossref_filter.py type:journal-article,until-pub-date:1886,from-pub-date:1600 db/doi
