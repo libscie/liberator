@@ -24,6 +24,7 @@ cursor = data['next-cursor']
 
 print(data['total-results'])
 
+row = 1000
 closer = 0
 
 while closer < 2:
@@ -47,6 +48,8 @@ while closer < 2:
         """
         if len(items) != 1000:
            closer += 1
+        print('Just parsed %d of %d' % (row, data['total-results']))
+        row += 1000
     except (ValueError, KeyError):
         print("Timing-out for 5 minutes")
         time.sleep(300)
