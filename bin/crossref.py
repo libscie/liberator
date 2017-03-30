@@ -4,7 +4,7 @@ import requests
 import os, sys
 import json
 import itertools
-import time
+import time, math, progressbar
 
 if len(sys.argv) != 2:
   sys.exit("Please specify\n[1] CrossRef filter (see API docs)\n")
@@ -22,12 +22,14 @@ data = r.json()['message']
 items = data['items']
 cursor = data['next-cursor']
 
-print(data['total-results'])
+pages = math.ceil(data['total-results'] / 1000)
 
 row = 1000
 closer = 0
 
-while closer < 2:
+bar = progressbar.ProgressBar()
+
+for page in bar(range(0,pages)):
     for i in range(0, len(items)):
         doi = items[i]['DOI']
         os.makedirs('db/doi/%s' % doi, exist_ok = True)
@@ -35,23 +37,12 @@ while closer < 2:
         new_file = open(filename, "w")
         new_file.write(str(items[i]))
         new_file.close()
-
-    time.sleep(5)
     try:
         r = requests.get("http://api.crossref.org/works?filter=%s&cursor=%s&rows=1000" % (crossref_filter, cursor))
         data = r.json()['message']
         items = data['items']
         cursor = data['next-cursor']
-        """
-        This one ensures that while loop stops after the first page
-        with less items than rows (the first still contains hits!)
-        """
-        if len(items) != 1000:
-           closer += 1
-        print('Just parsed %d of %d' % (row, data['total-results']))
-        row += 1000
     except (ValueError, KeyError):
         print("Timing-out for 5 minutes")
         time.sleep(300)
-
 
