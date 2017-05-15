@@ -26,7 +26,9 @@ The end-goal of this project is a website where the user gets prompted to upload
 
 ## Contributor guidelines
 
-Looking to contribute? Great! We work on a Pull Request basis, but if you're unfamiliar with Github and spotted a mistake, please feel free to [e-mail](mailto:info@libscie.org) your contribution. Being familiar with Github is not a prerequisite to contribute (if you want to learn go [here](https://try.github.io/levels/1/challenges/1)). If you feel that your contribution is rejected for improper reasons, please contact [Achintya Rao](mailto:achintya@achintyarao.in), who will try to resolve the issue with the maintainers.
+Looking to contribute? Great! We work on a Pull Request basis, but if you're unfamiliar with Github and spotted a mistake, please feel free to [e-mail](mailto:info@libscie.org) your contribution. Being familiar with Github is not a prerequisite to contribute (if you want to learn go [here](https://try.github.io/levels/1/challenges/1)). 
+
+If you feel that your contribution is rejected for improper reasons, please contact [Achintya Rao](mailto:achintya@achintyarao.in), who will try to resolve the issue with the maintainers. Please also respect the community guidelines in general interaction in issues, etc. See the [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/) that we also adhere to.
 
 Specific contributions are greatly appreciated. We try to keep our [issues page](https://github.com/libscie/liberator/issues) up-to-date so you can find specific tasks that can be completed there. Feel free to pick and choose what you feel you can contribute to! 
 
