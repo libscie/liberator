@@ -4,7 +4,7 @@ import requests
 import os, sys
 import json
 import itertools
-import time, math, progressbar
+import time, math#, progressbar
 
 if len(sys.argv) != 2:
   sys.exit("Please specify\n[1] CrossRef filter (see API docs)\n")
@@ -27,9 +27,10 @@ pages = math.ceil(data['total-results'] / 1000)
 row = 1000
 closer = 0
 
-bar = progressbar.ProgressBar()
+#bar = progressbar.ProgressBar()
 
-for page in bar(range(0,pages)):
+#for page in bar(range(0,pages)):
+for page in range(0,pages):
     for i in range(0, len(items)):
         doi = items[i]['DOI']
         os.makedirs('db/doi/%s' % doi, exist_ok = True)

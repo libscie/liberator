@@ -3,12 +3,15 @@
 import os
 import re as r
 import requests
+import time
 
 dirs = [x[0] for x in os.walk('db/doi')]
 
 i = 1
 
 for dir in dirs:
+    if i % 200000 == 0:
+        time.sleep(50000)
     doi = dir[7:]
     if doi != '' or len(doi) > 7:
         r = requests.get("http://api.oadoi.org/%s?email=info@libscie.org" % doi)
