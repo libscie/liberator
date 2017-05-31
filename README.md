@@ -4,7 +4,7 @@
 
 Welcome! This project aims to ensure public access to the public domain, for everyone and for any purpose. Drop us a line on gitter if you want to join the community of liberators! You can get an idea of what the end result of the project hopes to be [here](https://libscie.github.io/liberator)
 
-[![Join the chat at https://gitter.im/libscie/liberator](https://badges.gitter.im/libscie/liberator.svg)](https://gitter.im/libscie/liberator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/libscie/liberator](https://badges.gitter.im/libscie/liberator.svg)](https://gitter.im/libscie/liberator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)[![Build Status](https://travis-ci.org/libscie/liberator.svg?branch=master)](https://travis-ci.org/libscie/liberator)
 
 ## Description
 
