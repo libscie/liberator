@@ -45,7 +45,10 @@ def add_article(dir, doi_prefix, doi_suffix):
             with open(filename,'r') as f:
 
                 # Note that the .json file's content is evaluated as Python code!
-                nosql[source]['data'] = eval(f.read())
+                try:
+                    nosql[source]['data'] = eval(f.read())
+                except SyntaxError:
+                    pass
 
     # Create and save the Article object
     try:
