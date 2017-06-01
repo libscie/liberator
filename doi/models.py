@@ -4,8 +4,8 @@ from django.contrib.postgres.fields import JSONField
 class Article(models.Model):
     doi_prefix = models.CharField(max_length=255)
     doi_suffix = models.CharField(max_length=255)
-    crossref = JSONField()
-    zenodo_deposit = JSONField()
+    crossref = JSONField(blank=True)
+    zenodo_deposit = JSONField(blank=True)
     has_been_uploaded = models.BooleanField(default=False)
     free_fulltext_url = models.URLField(blank=True)
 
