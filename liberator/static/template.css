@@ -1,0 +1,155 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600);
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+body {
+
+  background: #8c144f
+}
+
+.aniheader {
+  position: relative;
+  margin: 2em auto 1em -5%;
+  color: white;
+  height: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.uploadbox {
+  position: relative;
+  margin: 1em auto 1em auto;
+  padding: 1em 1em 1em 1em;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  color: #808080;
+  border: 2px dashed #808080;
+  width: 40%
+}
+
+h1 {
+  size: relative;
+  text-align: center;
+  position: relative;
+  margin: 1em auto 0em auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25em;
+}
+
+h2 {
+  size: relative;
+  text-align: center;
+  position: relative;
+  margin: 1em auto 1em auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6em;
+}
+
+h3 {
+  size: relative;
+  text-align: center;
+  position: relative;
+  margin: 1em auto 1em auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+}
+
+h4 {
+  size: relative;
+  text-align: center;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  font-size: .6em;
+}
+
+.box {
+  position: center;
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em 2em 2em 2em;
+  width: 40%;
+}
+
+p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.word {
+  position: absolute;
+  width: 220px;
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wisteria {
+  color: #8e44ad;
+}
+
+.belize {
+  color: #2980b9;
+}
+
+.pomegranate {
+  color: #c0392b;
+}
+
+.green {
+  color: #16a085;
+}
+
+.midnight {
+  color: #2c3e50;
+}
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+.box.has-advanced-upload {
+  background-color: white;
+  outline: 2px dashed black;
+  outline-offset: -10px;
+}
+.box.has-advanced-upload .box__dragndrop {
+  display: inline;
+}
+.box.is-dragover {
+  background-color: grey;
+}
