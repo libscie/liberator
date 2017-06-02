@@ -19,3 +19,7 @@ class Article(models.Model):
 class PDF(models.Model):
     file = models.FileField()
     article = models.ForeignKey('Article')
+
+class Illegal(models.Model):
+    error = models.FileField()
+    article = models.ForeignKey('Article')
