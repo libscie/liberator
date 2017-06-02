@@ -3,6 +3,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="/static/template.css">
+    <link rel="icon" href="/static/favicon.ico">
   </head>
 
   <body>
@@ -22,14 +23,14 @@
     <div class="box">
       <h1>{{ count }} pieces of research are copyright free</h1>
       <h4>Meaning: anyone can do literally anything they want with it</h4>
-      <h1>2,012 of these are freely available</h1>
-      <h4>Meaning: buying access to the remaining 592,058 costs ~$17,761,740</h4>
+      <h1>{{ missing }} of these are freely available</h1>
+      <h4>Meaning: buying access to the remaining {{ missing }} would cost ~${{ costs }}</h4>
       <h1>Will you make another one accessible in two easy steps?</h1>
-      <h1>
-        Step 1: Download the following piece of science - <a target="_blank" href='https://doi.org/{{ article }}'>{{ article }}6</a><br>
-        <small>(no affiliation? <a target="_blank" href='http://sci-hub.bz/{{ article }}'>download here</a>)</small>
-      </h1>
-      <h1>Step 2: Drag and drop the file here</h1>
+      <h1>Step 1</h1>
+      <h1>Download <a target="_blank" href='https://doi.org/{{ article }}'>this</a> piece of science</h1>
+        <center><small>(no institutional affiliation? <a target="_blank" href='http://sci-hub.bz/{{ article }}'>download here</a>)</small></center>
+      <h1>Step 2</h1>
+      <h1>Drag and drop the file here</h1>
       <div class="uploadbox">
         Drop file here.
       </div>
@@ -38,6 +39,7 @@
       <h4>Experiencing issues?</h4>
       <input type="checkbox" name="problem" value="age">This piece of science is not old!</input>
       <input type="checkbox" name="problem" value="access">I get an error!</input>
+      <input type="checkbox" name="problem" value="access">Already publicly accessible! :-)</input>
 
     </div>
   </body>
